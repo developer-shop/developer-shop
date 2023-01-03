@@ -10,7 +10,7 @@ form.addEventListener("submit",(e)=>{
 })
  
 function submitForm(name,email,msg){
-fetch("claroorlando773@gmail.com", {
+fetch("https://formsubmit.co/ajax/stechblogger@gmail.com", {
     method: "POST",
     headers: { 
         'Content-Type': 'application/json',
