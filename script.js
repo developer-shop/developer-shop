@@ -2,7 +2,9 @@ const overlay = document.querySelector(".overlay");
 const form  = document.querySelector("form"),
 name = form.querySelector("#name"),
 email = form.querySelector("#email"),
-msg = form.querySelector("#msg");
+msg = form.querySelector("#msg"),
+apk = form.querySelector("#apk"),
+url = form.querySelector("#url");
 
 form.addEventListener("submit",(e)=>{
     e.preventDefault();
