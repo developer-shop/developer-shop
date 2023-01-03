@@ -2,13 +2,13 @@ const overlay = document.querySelector(".overlay");
 const form  = document.querySelector("form"),
 name = form.querySelector("#name"),
 email = form.querySelector("#email"),
-msg = form.querySelector("#msg"),
 apk = form.querySelector("#apk"),
-url = form.querySelector("#url");
+link = form.querySelector("#link"),      
+msg = form.querySelector("#msg");
 
 form.addEventListener("submit",(e)=>{
     e.preventDefault();
-    submitForm(name.value,email.value,apk.value,link.value,msg.value)
+    submitForm(name.value, email.value, apk.value, link.value, msg.value)
 })
  
 function submitForm(name,email,apk,link,msg){
@@ -23,7 +23,7 @@ fetch("https://formsubmit.co/ajax/claroorlando773@gmail.com", {
         Email: email,
         apk: apk,
         link: link,
-        Message: msg,
+        Message: msg;
         
     })
 })
