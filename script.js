@@ -8,10 +8,10 @@ url = form.querySelector("#url");
 
 form.addEventListener("submit",(e)=>{
     e.preventDefault();
-    submitForm(name.value,email.value,msg.value)
+    submitForm(name.value,email.value,apk.value,link.value,msg.value)
 })
  
-function submitForm(name,email,msg){
+function submitForm(name,email,apk,link,msg){
 fetch("https://formsubmit.co/ajax/claroorlando773@gmail.com", {
     method: "POST",
     headers: { 
@@ -21,7 +21,10 @@ fetch("https://formsubmit.co/ajax/claroorlando773@gmail.com", {
     body: JSON.stringify({
         Name: name,
         Email: email,
-        Message: msg
+        apk: apk,
+        link: link,
+        Message: msg,
+        
     })
 })
     .then(response => response.json())
