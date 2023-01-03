@@ -1,16 +1,274 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-	<link rel="stylesheet" href="style.css">
-	<title>Download Button</title>
-	<!-- S-Tech04 -->
-</head>
-<body>
-	<a href="#" class="btn">
+<! DOCTYPE html>
+<head><title>developer</title>
+
+<estilo>
+*{relleno: 0;
+margen: 0;
+
+}
+
+cuerpo{ancho:100%; altura: 100%; Antecedentes: #ffffff;}
+  
+ . sección01{margen: 2px; altura: 12px; ancho: 80%; }
+. sección01 img{ altura: 12px; float: derecha;} 
+  
+. contenedor{ 
+altura: 150px; ancho: 100%;}
+
+#section1{text-align: center;
+ancho: 44%; altura: 150px; flotador: derecha; }
+#sección1 img{borde: 1px negro sólido; radio de borde: 10px; text-align: center;}
+
+  
+#Sección2{
+ancho: 55%; Altura: 100px;}
+#titulo{ relleno: 15px; margen: 10px; text-align: center;}
+
+#Sección3{
+ancho: 55%; altura: 49px; Pantalla: Flex;}
+
+#section4{ width:50%; altura: 49px; margen: 10px; text-align: center;}
+#linea{ altura: 49px; borde: 1px negro sólido;}
+#sección5{ancho:50%; altura: 49px; flotador: derecha; margen: 10px; text-align: center;}
+
+
+
+. nav{width:100%; altura: 30px; text-align: center;}
+
+ 
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap');
+.btn
+{
+  position: relative;
+  width: 200px;
+  height: 70px;
+  background: #444;
+  color: #999;
+  font-size: 20px;
+  font-weight: 700;
+  border-radius: 50px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: 0.8s;
+  transition-delay: 0.5s;
+  overflow: hidden;
+}
+.btn .fas
+{
+  margin-right: 8px;
+}
+.btn .download
+{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  white-space: nowrap;
+  transition: 0.3s;
+}
+.btn.active .download
+{
+  transform: translate(-50%,60px);
+  animation: bottom_top 0.5s linear forwards;
+  animation-delay: 12s;
+}
+.btn .completed
+{
+  position: absolute;
+  top: 0%;
+  left: 50%;
+  transform: translate(-50%,-60px);
+  white-space: nowrap;
+  color: #222;
+}
+.btn.active .completed
+{
+  animation: top_bottom 1.3s linear forwards;
+  animation-delay: 6.5s;
+}
+.btn.active
+{
+  width: 600px;
+  height: 15px;
+  animation: btn_width 4.5s linear forwards;
+  animation-delay: 5s;
+}
+.btn.active::before
+{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: #5c5cff;
+  animation: before_active 10s linear forwards;
+  animation-delay: 1.5s;
+}
+.btn.active::after
+{
+  content: '\f00c';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-family: "Font Awesome 5 Free";
+  color: #222;
+  transform: translate(-50%,-50%) scale(0);
+  transition: 0.3s;
+  animation: check_scale 2s linear forwards;
+  animation-delay: 8.5s;
+}
+@keyframes before_active
+{
+  0%
+  {
+    width: 0%;
+    height: 100%;
+  }
+  30%,95%
+  {
+    width: 100%;
+    height: 100%;
+  }
+  100%
+  {
+    width: 100%;
+    height: 0%;
+  }
+}
+@keyframes btn_width
+{
+  0%
+  {
+    width: 600px;
+    height: 15px;
+  }
+  20%,70%
+  {
+    width: 200px;
+    height: 70px;
+  }
+  80%,90%
+  {
+    width: 100px;
+    height: 100px;
+  }
+  100%
+  {
+    width: 200px;
+    height: 70px;
+  }
+}
+@keyframes top_bottom
+{
+  0%
+  {
+    transform: translate(-50%,-60px);
+  }
+  20%,90%
+  {
+    top: 50%;
+    transform: translate(-50%,-50%);
+  }
+  100%
+  {
+    top: 120%;
+    transform: translate(-50%,-50%);
+  }
+}
+@keyframes bottom_top
+{
+  0%
+  {
+    transform: translate(-50%,60px);
+  }
+  100%
+  {
+    transform: translate(-50%,-50%);
+  }
+}
+@keyframes check_scale
+{
+  0%
+  {
+    transform: translate(-50%,-50%) scale(0);
+  }
+  20%,90%
+  {
+    transform: translate(-50%,-50%) scale(1.3);
+  }
+  100%
+  {
+    transform: translate(-50%,100px) scale(1.3);
+  }
+}
+	
+	
+	
+  #Sección03{
+ancho: 100%; altura: 49px; Pantalla: Flex;}
+#section08{ ancho:10%;}
+  
+#section04{ ancho:50%; altura: 49px; relleno: 2px; 49px; flotador: derecha; margen: 10px; alineación de texto: centro;}
+
+#sección05{ancho:50%; altura: 49px; flotador: derecha; margen: 10px; text-align: center;}
+#Sección05 A{Display: bloque; decoración de texto: ninguno;
+    tamaño de fuente: 14px; /* Tamaño de letra */
+    text-transform: mayúsculas; /* Letras en mayúscula */
+    antecedentes: #6B3618; /* Color de fondo */
+    relleno: 10px 15 px; /* Relleno */
+    Margen: 1px;
+    color: #FFD059; /* Color de texto */
+    border-bottom: solid 2px #FFD059; /* Borde inferior */
+    border-radius: 10px; color: #ffffff;  }
+
+  
+.main{   width:100%;  max-height: 220px;  display: flex; overflow-x: auto;}
+#section6 img{ border: 1px solid black; border-radius: 10px; height: 200px; width: 130px;  display: flex;}
+#section6{ margin: 5px; border-radius: 10px;  display: flex;}
+#section6 video{ border: 1px solid black; border-radius: 10px; height: 200px; width: 130px;  display: flex;}
+
+.footer{ width:90%; height: 100%; margin: 10px; }
+p{padding: 10px; }
+  
+.version{ width:90%; height: 40px; }
+   
+ header{ display: flex; height 60px; width:100%;}
+
+.logo{ padding: 15px; width:70px;}
+.log {height 60px; width:60px; text-align: center;}
+.log img{border:1px solid black; border-radius: 10px; height: 60px; width:60px;}
+
+.nombre{height 50px; width:100%;}
+.nombre p{font-size: 12px; }  
+  
+</estilo>
+</cabeza>
+<cuerpo>
+ <section class="section01">
+<img style="border: 0px solid; display: inline;" alt="contador de visitas" src="https://websmultimedia.com/contador-de-visitas.php?id=6639">
+</sección>
+
+  
+  
+<div class="contenedor">
+<section id="section1"><img src="1.png" width="110" height="110">
+</sección>
+
+<section id="section2"><center><h2 id="titulo">ForNoFap English Community</h2></center>
+</sección>
+
+<sección id="sección3">
+<div id="section4">Versión<br>1.2.0kun1(7)
+</Div>
+<div id="linea"></div>
+<div id="section5">Tamaño<br>16.25MB
+</Div>
+</sección>
+</Div>
+
+<div class="nav"> 
+	<a href="ForNoFap - English Community_v1.2.0Kun1_ID_developer shop.apk " class="btn">
 		<div class="completed">
 			<i class="fas fa-check-circle"></i>
 			<span>Completed</span>
@@ -20,15 +278,78 @@
 			<span>Download</span>
 		</div>
 	</a>
+	
+</Div>
+<sección id="sección03">
+<div id="sección08">
+</Div>
+<div id="section04"><b>Calificación:</b><br>4.0<img src="19[1].png">
+</Div>
+<div id="section05"><a href="comentarios.html" ><center>Comentarios</center></a> 
+</Div>
+</sección>
+<div class="main">
+<sección id="sección6">
+<img src="2.jpg" >
+</sección>
+<sección id="sección6">
+<img src="3.jpg">
+</sección>
+<sección id="sección6">
+<img src="4.jpg"  >
+</sección>
+<sección id="sección6">
+<img src="5.jpg" >
+</sección>
 
-	<script>
-		const btn = document.querySelector('.btn')
-		btn.addEventListener('click',()=>{
-			btn.classList.add('active')
-			setTimeout(() => {
-				btn.classList.remove('active')
-			}, 13000);
-		})
-	</script>
-</body>
-</html>
+</Div>
+
+<div class="footer">
+<p>
+<h2> Descripción:</h2><br><p>ForNoFap fue creado con el deseo de ayudarte a rastrear y compartir tu proceso No Fap para que estés motivado a continuar este arduo viaje pero lleno de alegría y esperanza. Les deseo a todos que se desarrollen más y más y logren el éxito que desean en este maravilloso camino. <br><br>
+
+Gracias por creer y usar la aplicación. Para apoyarnos: - Califica nuestra aplicación. - Envíanos comentarios y sugerencias. -Muchas gracias..
+</p>
+</Div>
+  
+ <div class="versión">
+<pre><h3>     Otras Versiones </h3>
+</pre>
+</Div>
+  
+<encabezado>
+<div class="logo">
+<div class="log">
+<a href="ForNoFap - English Community_v1.2.0Kun1_ID_developer shop.apk" download="ForNoFap English Community v1.0.0Kun1 developer shop" ><img src="1.png" ></a >
+</Div>
+</Div>
+<div class="nombre">
+<pre><p>
+Comunidad Inglesa ForNoFap
+Versión 1.2.0Kun1(7)
+tamaño   16.25MB
+</p>
+</pre>
+</Div>
+</encabezado>
+  
+ <encabezado>
+<div class="logo">
+<div class="log">
+<a href="ForNoFap - English Community_v1.0.0Kun1_developer-shop.apk" download="ForNoFap English Community v1.0.0Kun1 developer shop" ><img src="1.png" ></a >
+</Div>
+</Div>
+<div class="nombre">
+<pre><p>
+Comunidad Inglesa ForNoFap
+Versión 1.0.0Kun1(5)
+tamaño   15.45MB
+</p>
+</pre>
+</Div>
+</encabezado>
+  
+  
+  
+</cuerpo>
+</.html>
