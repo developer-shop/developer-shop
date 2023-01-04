@@ -1,37 +1,48 @@
-const overlay = document.querySelector(".overlay");
-const form  = document.querySelector("form"),
-name = form.querySelector("#name"),
-email = form.querySelector("#email"),
-msg = form.querySelector("#msg");
+const form = document.querySelector('form');
+eField = form.querySelector('.email'),
+eInput = eField.querySelector('input'),
+pField = form.querySelector('.password'),
+pInput = pField.querySelector('input');
 
-form.addEventListener("submit",(e)=>{
+
+form.onsubmit = (e)=>{
     e.preventDefault();
-    submitForm(name.value,email.value,msg.value)
-})
- 
-function submitForm(name,email,msg){
-fetch("https://formsubmit.co/ajax/stechblogger@gmail.com", {
-    method: "POST",
-    headers: { 
-        'Content-Type': 'application/json',
-        'Accept': 'application/json'
-    },
-    body: JSON.stringify({
-        Name: name,
-        Email: email,
-        Message: msg
-    })
-})
-    .then(response => response.json())
-    .then(data => {
-        if (data.success == "true") {
-            overlay.style.display="flex";
-            overlay.addEventListener("click",()=>{
-                overlay.style.display="none";
-    
-            })
-            form.reset();
+
+    (eInput.value == "") ? eField.classList.add("shake", "error") : checkEmail();
+    (pInput.value == "") ? pField.classList.add("shake", "error") : checkPassword();
+
+    setTimeout(() => {
+        eField.classList.remove('shake');
+        pField.classList.remove('shake');
+    }, 500);
+
+    eInput.onkeyup = ()=>{checkEmail();}
+    pInput.onkeyup = ()=>{checkPassword();}
+
+    function checkEmail(){
+        let pattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/; //pattern for validate email
+        if(!eInput.value.match(pattern)){
+            eField.classList.add("error");
+            eField.classList.remove("valid");
+            let errorTxt = eField.querySelector('.error-txt');
+            (eInput.value != "") ? errorTxt.innerText = "Enter a valid email address" : errorTxt.innerText = "Email can't be blank"
+        }else{
+            eField.classList.remove("error");
+            eField.classList.add("valid");
         }
-    })
-    .catch(error => console.log(error));
+    }
+
+    function checkPassword(){
+        if(pInput.value == ""){
+            pField.classList.add('error');
+            pField.classList.remove('valid');
+        }else{
+            pField.classList.remove('error');
+            pField.classList.add('valid');
+        }
+    }
+
+    if(!eField.classList.contains('error') && !pField.classList.contains('error')){
+        window.location.href = form.getAttribute('action') //redirecting user to the specified url which is inside action attribute of form tag
+    }
 }
